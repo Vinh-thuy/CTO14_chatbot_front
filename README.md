@@ -75,3 +75,7 @@ Your chatbot should now be running at `http://localhost:3000/`!
 
 ## 🎉 Enjoy chatting with your AI assistant, running entirely on your machine! 🚀
 
+<p align="center">
+    <img src="https://github.com/Priom7/deekseek-React-Chat-App/blob/main/productUI.png" width="400" alt="working gif">
+</p>
+
