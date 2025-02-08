@@ -90,5 +90,5 @@ Votre chatbot devrait maintenant tourner à l'adresse `http://localhost:3000/` !
 ## 🎉 Profitez de votre assistant IA, qui tourne entièrement sur votre machine ! 🚀
 
 <p align="center">
-    <img src="https://github.com/Priom7/deekseek-React-Chat-App/blob/main/productUI.png" width="400" alt="working gif">
+    <img src="https://github.com/Vinh-thuy/CTO14_chatbot_front/blob/main/productUI.png" width="400" alt="working gif">
 </p>
