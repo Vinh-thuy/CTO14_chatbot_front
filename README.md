@@ -1,13 +1,13 @@
-# 🛠️ React-Powered Local Chatbot with Ollama & DeepSeek LLM
+# 🛠️ React-Powered Local Chatbot with Ollama & LLM
 
 ## 🚀 Overview
 
-This project is a real-time chatbot built with **React**, powered by **Ollama** running locally with the **DeepSeek LLM**. The entire application, including the LLM model, runs on your local machine, ensuring full control over data and performance.
+This project is a real-time chatbot built with **React**, powered by **Ollama** running locally with a Large Language Model (LLM). The entire application, including the LLM model, runs on your local machine, ensuring full control over data and performance.
 
 ## 🎯 Features
 
 - 💬 **Real-time Chat** with AI responses
-- 🤖 **DeepSeek LLM** model for intelligent conversations
+- 🤖 **Dynamic LLM Model** support
 - 🧠 **Thinking & Typing Indicators** for better UX
 - 🌟 **Smooth Animations** using Framer Motion
 - 🎨 **Bootstrap UI** for a modern chat interface
@@ -31,12 +31,12 @@ Follow the installation steps based on your OS:
 - **Mac**: Install via `brew install ollama`
 - **Linux**: Follow the Linux-specific installation guide
 
-#### 📥 Pull & Serve the DeepSeek Model
+#### 📥 Pull & Serve an LLM Model
 
-We are using **DeepSeek-r1:1.5b**. Pull and serve it with:
+Pull and serve a model with:
 
 ```bash
-ollama pull deepseek-r1:1.5b
+ollama pull <model_name>  # e.g., ollama pull llama3.2
 ollama serve
 ```
 
@@ -68,8 +68,8 @@ Your chatbot should now be running at `http://localhost:3000/`!
 
 ## 🔧 Configuration
 
-- If you're using a different model, update the `model` parameter in `fetch` requests inside `ChatApp.js`.
-- Modify UI elements using Bootstrap classes and Framer Motion for animations.
+- Change the model in `App.js` by modifying the `ollamaModel` variable
+- Customize UI elements using Bootstrap classes and Framer Motion for animations
 
 ---
 
@@ -78,4 +78,3 @@ Your chatbot should now be running at `http://localhost:3000/`!
 <p align="center">
     <img src="https://github.com/Priom7/deekseek-React-Chat-App/blob/main/productUI.png" width="400" alt="working gif">
 </p>
-

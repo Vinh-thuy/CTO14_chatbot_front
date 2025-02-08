@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-export default function ChatApp() {
+export default function ChatApp({ model = "llama3.2" }) {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState("");
     const [isTyping, setIsTyping] = useState(false);
@@ -33,7 +33,7 @@ export default function ChatApp() {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    model: "deepseek-r1:1.5b",
+                    model: model,
                     messages: [...messages, userMessage],
                     stream: true,
                 }),
@@ -88,10 +88,10 @@ export default function ChatApp() {
     return (
         <div className="container py-4">
             <h1>
-                <i className="bi bi-chat-dots-fill"></i> Chat with your Custom agent 🤖
+                CTO14 Chatbot
             </h1>
 
-            <Card className="shadow-sm mb-4" style={{ maxHeight: "40vh", overflowY: "auto", minHeight: "40vh" }}>
+            <Card className="shadow-sm mb-4" style={{ maxHeight: "40vh", overflowY: "auto", minHeight: "40vh", backgroundColor: "transparent", border: "none" }}>
                 <Card.Body>
                     {messages.map((msg, index) => (
                         <motion.div
@@ -101,13 +101,20 @@ export default function ChatApp() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3 }}
                         >
-                            <Card
-                                className={`p-3 rounded shadow-sm ${msg.role === "user" ? "bg-primary text-white" : "bg-light text-dark"}`}
-                                style={{ maxWidth: "70%" }}
+                            <div
+                                className={`p-3 ${msg.role === "user" ? "text-primary text-end" : "text-dark text-start"}`}
+                                style={{ 
+                                    maxWidth: "70%", 
+                                    backgroundColor: "transparent", 
+                                    borderRadius: 0, 
+                                    border: "none",
+                                    fontWeight: msg.role === "user" ? "bold" : "normal",
+                                    textAlign: msg.role === "user" ? "right" : "left"
+                                }}
                             >
                                 <p>{msg.content}</p>
-                                {msg.reasoning && <p className="text-secondary"><i className="bi bi-brain"></i> {msg.reasoning}</p>}
-                            </Card>
+                                {msg.reasoning && <p className={`text-secondary ${msg.role === "user" ? "text-end" : "text-start"}`}><i className="bi bi-brain"></i> {msg.reasoning}</p>}
+                            </div>
                         </motion.div>
                     ))}
                     {isTyping && (
@@ -117,9 +124,9 @@ export default function ChatApp() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3 }}
                         >
-                            <Card className="p-3 rounded bg-light shadow-sm text-secondary">
+                            <div className="p-3 text-secondary" style={{ backgroundColor: "transparent", border: "none" }}>
                                 <i className="bi bi-three-dots"></i> Typing...
-                            </Card>
+                            </div>
                         </motion.div>
                     )}
                     {isThinking && (
@@ -129,9 +136,9 @@ export default function ChatApp() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3 }}
                         >
-                            <Card className="p-3 rounded bg-light shadow-sm text-secondary">
+                            <div className="p-3 text-secondary" style={{ backgroundColor: "transparent", border: "none" }}>
                                 <i className="bi bi-brain"></i> Thinking...
-                            </Card>
+                            </div>
                         </motion.div>
                     )}
                     <div ref={messagesEndRef} />

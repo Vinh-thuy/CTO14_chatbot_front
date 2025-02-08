@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  background: white;
   animation: backgroundAnimation 10s infinite alternate;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
@@ -21,15 +21,14 @@
 }
 
 .App-header {
-  background-color: rgba(40, 44, 52, 0.8);
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-  animation: headerAnimation 5s infinite alternate;
+  color: black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
 }
