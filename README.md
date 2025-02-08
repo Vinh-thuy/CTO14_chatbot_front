@@ -1,79 +1,93 @@
-# 🛠️ React-Powered Local Chatbot with Ollama & LLM
+# 🛠️ Chatbot Local Alimenté par React avec Ollama & LLM
 
-## 🚀 Overview
+## 🚀 Aperçu
 
-This project is a real-time chatbot built with **React**, powered by **Ollama** running locally with a Large Language Model (LLM). The entire application, including the LLM model, runs on your local machine, ensuring full control over data and performance.
+Ce projet est un chatbot en temps réel construit avec **React**, propulsé par **Ollama** et exécutant un modèle de Langage Automatique (LLM) localement. L'ensemble de l'application, y compris le modèle LLM, s'exécute sur votre machine locale, garantissant un contrôle total des données et des performances.
 
-## 🎯 Features
+## 🎯 Fonctionnalités
 
-- 💬 **Real-time Chat** with AI responses
-- 🤖 **Dynamic LLM Model** support
-- 🧠 **Thinking & Typing Indicators** for better UX
-- 🌟 **Smooth Animations** using Framer Motion
-- 🎨 **Bootstrap UI** for a modern chat interface
-- 🏠 **Runs Fully Locally** – No external API calls required!
+- 💬 **Chat en Temps Réel** avec réponses de l'IA
+- 🤖 **Prise en Charge Dynamique du Modèle LLM**
+- 🧠 **Indicateurs de Réflexion & de Frappe** pour une meilleure expérience utilisateur
+- 🌟 **Animations Fluides** utilisant Framer Motion
+- 🎨 **Interface Bootstrap** moderne
+- 🏠 **Fonctionne Entièrement Localement** – Aucun appel API externe requis !
 
 ---
 
-## ⚡ Setup Guide
+## ⚡ Guide d'Installation
 
-### 1️⃣ Install & Set Up Ollama
+### 1️⃣ Installer & Configurer Ollama
 
-To run the chatbot locally, you'll need **Ollama**, a lightweight LLM server.
+Pour exécuter le chatbot localement, vous aurez besoin d'**Ollama**, un serveur LLM léger.
 
-#### 🛠️ Install Ollama
+#### 🛠️ Installation d'Ollama
 
-Download Ollama from the official website: 🔗 [https://ollama.com/](https://ollama.com/)
+##### Sur Windows :
+1. Téléchargez l'installateur depuis le site officiel : 🔗 [https://ollama.com/](https://ollama.com/)
+2. Étapes détaillées :
+   - Lancez le fichier d'installation téléchargé
+   - Acceptez les conditions d'utilisation
+   - Choisissez un dossier d'installation (par défaut recommandé)
+   - Cochez l'option "Ajouter au PATH" si disponible
+   - Terminez l'installation
+3. Ouvrez une invite de commande et vérifiez l'installation :
+   ```cmd
+   ollama --version
+   ```
+4. Si la commande ne fonctionne pas, redémarrez votre ordinateur
 
-Follow the installation steps based on your OS:
+##### Sur Mac :
+```bash
+brew install ollama
+```
 
-- **Windows**: Run the installer
-- **Mac**: Install via `brew install ollama`
-- **Linux**: Follow the Linux-specific installation guide
+##### Sur Linux :
+Suivez le guide d'installation spécifique à votre distribution
 
-#### 📥 Pull & Serve an LLM Model
+#### 📥 Télécharger & Servir un Modèle LLM
 
-Pull and serve a model with:
+Téléchargez et servez un modèle avec :
 
 ```bash
-ollama pull <model_name>  # e.g., ollama pull llama3.2
+ollama pull <nom_du_modele>  # par exemple : ollama pull llama3.2
 ollama serve
 ```
 
-Once running, Ollama will be available at `http://127.0.0.1:11434/api/chat`.
+Une fois en cours d'exécution, Ollama sera disponible à l'adresse `http://127.0.0.1:11434/api/chat`.
 
 ---
 
-### 2️⃣ Run the React App
+### 2️⃣ Lancer l'Application React
 
-#### 📦 Install Dependencies
+#### 📦 Installer les Dépendances
 
-Ensure you have **Node.js** and **npm** installed. Then, clone the repo and install dependencies:
+Assurez-vous d'avoir **Node.js** et **npm** installés. Ensuite, clonez le dépôt et installez les dépendances :
 
 ```bash
-git clone <repo-url>
-cd <project-directory>
+git clone <url_du_depot>
+cd <repertoire_du_projet>
 npm install
 ```
 
-#### ▶️ Start the App
+#### ▶️ Démarrer l'Application
 
 ```bash
 npm start
 ```
 
-Your chatbot should now be running at `http://localhost:3000/`!
+Votre chatbot devrait maintenant tourner à l'adresse `http://localhost:3000/` !
 
 ---
 
 ## 🔧 Configuration
 
-- Change the model in `App.js` by modifying the `ollamaModel` variable
-- Customize UI elements using Bootstrap classes and Framer Motion for animations
+- Changez le modèle dans `App.js` en modifiant la variable `ollamaModel`
+- Personnalisez les éléments de l'interface utilisateur avec les classes Bootstrap et les animations Framer Motion
 
 ---
 
-## 🎉 Enjoy chatting with your AI assistant, running entirely on your machine! 🚀
+## 🎉 Profitez de votre assistant IA, qui tourne entièrement sur votre machine ! 🚀
 
 <p align="center">
     <img src="https://github.com/Priom7/deekseek-React-Chat-App/blob/main/productUI.png" width="400" alt="working gif">
